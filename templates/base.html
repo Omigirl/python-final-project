@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cool site xD</title>
+
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+
+    <div class="nav">
+		<div class="nav_left">
+			<a href="/">Главная</a>
+		</div>
+
+		{% if not request_is_authenticated %}
+		<div class="nav_right">
+			<a href="/login/">Login</a>
+			<a href="/registration/">Registration</a>
+		</div>
+		{% else %}
+		<div class="nav_logout">
+			<a href="/profile/">Profile</a>
+			<a href="/logout/">Logout</a>
+		</div>
+		{% endif %}
+	</div>
+
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
