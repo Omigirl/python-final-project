@@ -1,7 +1,7 @@
 from app import app
 from database import db
 from flask import request, render_template, redirect, make_response
-
+ 
 import services
 
 
